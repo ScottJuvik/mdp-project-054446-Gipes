@@ -1,0 +1,173 @@
+/* CopilotKit brand fonts */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300..800&family=Spline+Sans+Mono:wght@400;500;600&display=swap");
+
+@import "tailwindcss";
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-edison-green: var(--edison-green);
+  --color-edison-green-dark: var(--edison-green-dark);
+  --color-edison-green-light: var(--edison-green-light);
+  --color-edison-button: var(--edison-button);
+  --color-edison-orange: var(--edison-orange);
+  --color-edison-navy: var(--edison-navy);
+  --background-image-edison-header: var(--gradient-header);
+}
+
+:root {
+  --radius: 1rem;
+  --background: oklch(0.97 0.005 260);
+  --foreground: oklch(0.2 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0 0);
+  --primary: oklch(0.72 0.18 142);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0.005 260);
+  --secondary-foreground: oklch(0.2 0 0);
+  --muted: oklch(0.95 0.005 260);
+  --muted-foreground: oklch(0.5 0.01 260);
+  --accent: oklch(0.95 0.01 142);
+  --accent-foreground: oklch(0.2 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.9 0.005 260);
+  --input: oklch(0.9 0.005 260);
+  --ring: oklch(0.72 0.18 142);
+
+  --edison-green: oklch(0.68 0.17 142);
+  --edison-green-dark: oklch(0.45 0.13 145);
+  --edison-green-light: oklch(0.78 0.16 140);
+  --edison-button: oklch(0.38 0.005 260);
+  --edison-orange: oklch(0.7 0.2 45);
+  --edison-navy: oklch(0.3 0.12 260);
+  --gradient-header: linear-gradient(
+    180deg,
+    oklch(0.72 0.17 140) 0%,
+    oklch(0.5 0.14 145) 100%
+  );
+
+  /* CopilotKit tokens */
+  --cpk-default-font-family: var(--font-body);
+  --font-body: "Plus Jakarta Sans", "DM Sans", "Segoe UI", sans-serif;
+  --font-code:
+    "Spline Sans Mono", "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
+  --cpk-mint-400: #85ecce;
+  --cpk-mint-800: #189370;
+  --cpk-lilac-400: #bec2ff;
+  --cpk-orange-400: #ffac4d;
+  --cpk-yellow-400: #fff388;
+  --cpk-ambient-gradient: linear-gradient(
+    90deg,
+    #bec2ff 0%,
+    #85ecce 45.673%,
+    #ffac4d 100%
+  );
+}
+
+.dark {
+  --background: #010507;
+  --foreground: #ffffff;
+  --card: #191a1e;
+  --card-foreground: #ffffff;
+  --primary: #ffffff;
+  --primary-foreground: #010507;
+  --secondary: #242529;
+  --secondary-foreground: #ffffff;
+  --muted: #242529;
+  --muted-foreground: #adadb2;
+  --accent: #303136;
+  --accent-foreground: #ffffff;
+  --destructive: #fa5f67;
+  --destructive-foreground: #ffffff;
+  --border: #303136;
+  --input: #303136;
+  --ring: #bec2ff;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family:
+      -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI",
+      system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  html,
+  body {
+    height: 100%;
+  }
+}
+
+/* Edison header */
+.edison-header {
+  background: var(--gradient-header);
+  position: relative;
+  overflow: hidden;
+}
+.edison-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 30%, oklch(1 0 0 / 0.08) 0, transparent 25%),
+    radial-gradient(circle at 80% 70%, oklch(1 0 0 / 0.06) 0, transparent 30%),
+    repeating-linear-gradient(
+      60deg,
+      transparent 0,
+      transparent 40px,
+      oklch(1 0 0 / 0.03) 40px,
+      oklch(1 0 0 / 0.03) 41px
+    ),
+    repeating-linear-gradient(
+      -60deg,
+      transparent 0,
+      transparent 40px,
+      oklch(1 0 0 / 0.03) 40px,
+      oklch(1 0 0 / 0.03) 41px
+    );
+  pointer-events: none;
+}
+
+/* CopilotKit suggestion pills */
+[data-copilotkit] button[data-slot="suggestion-pill"].a2ui-highlight {
+  border-color: var(--cpk-lilac-400);
+  background: color-mix(in srgb, var(--cpk-lilac-400) 15%, var(--background));
+}
+[data-copilotkit] button[data-slot="suggestion-pill"].opengenui-highlight {
+  border-color: var(--cpk-mint-400);
+  background: color-mix(in srgb, var(--cpk-mint-400) 15%, var(--background));
+}
