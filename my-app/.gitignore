@@ -54,3 +54,5 @@ next-env.d.ts
 .scratch/
 
 *.egg-info/
+
+.DS_Store
