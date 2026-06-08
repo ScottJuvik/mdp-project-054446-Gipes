@@ -119,9 +119,9 @@ This starts both the Next.js frontend (port 5173) and the Python agent (port 812
 - **AI integration**: CopilotKit v2 (React hooks + Python middleware)
 - **Charts / generative UI**: A2UI the agent generates chart layouts declaratively at runtime
 
-## A2UI — Agent-Driven Chart Generation
+## A2UI - Agent-Driven Chart Generation
 
-The app uses [A2UI](https://a2ui.org/specification/) for dynamic chart rendering. When the user asks for a chart, the agent calls `generate_a2ui`, which returns a declarative component tree. The frontend renders it using the catalog defined in `src/app/declarative-generative-ui/`.
+The app uses [A2UI]([https://a2ui.org/specification/](https://a2ui.org/#specification-versions)) for dynamic chart rendering. When the user asks for a chart, the agent calls `generate_a2ui`, which returns a declarative component tree. The frontend renders it using the catalog defined in `src/app/declarative-generative-ui/`.
 
 **Key files:**
 
